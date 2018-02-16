@@ -9,6 +9,7 @@ mainClassName = 'Main'
 sourceCompatibility = 1.5
 
 repositories {
+    maven { url 'http://maven.aliyun.com/nexus/content/groups/public/'}
     mavenCentral()
 }
 
