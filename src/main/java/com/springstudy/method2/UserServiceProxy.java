@@ -19,10 +19,10 @@ public class UserServiceProxy implements UserService {
     public void getUserList() throws Exception {
         before();
         this.userService.getUserList();
-        end();
+        after();
     }
 
-    public void end() {
+    public void after() {
         long end = System.currentTimeMillis();
         System.out.println("execute time: " + (end - begin) + " milli seconds");
     }
