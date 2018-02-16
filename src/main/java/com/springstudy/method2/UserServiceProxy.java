@@ -1,25 +1,24 @@
-package com.springstudy;
-
+package com.springstudy.method2;
 
 /**
- * @author haohong
+ * @author haohohong
  */
-public class UserService {
+public class UserServiceProxy implements UserService {
+    private UserService userService;
     private long begin;
+
+    public UserServiceProxy(UserService userService) {
+        this.userService = userService;
+    }
 
     public void before() {
         begin = System.currentTimeMillis();
     }
 
+    @Override
     public void getUserList() throws Exception {
         before();
-
-        System.out.println("connect db");
-        long sleep = (long) (Math.random() * 5000);
-        // 模拟5秒内的数据库查询
-        Thread.sleep(sleep);
-        System.out.println("return user list");
-
+        this.userService.getUserList();
         end();
     }
 

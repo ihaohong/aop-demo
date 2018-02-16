@@ -1,13 +1,13 @@
-package com.springstudy;
+package com.springstudy.method1;
 
 import org.junit.Test;
 
 /**
  * @author haohong
  */
-public class UserServiceTest {
+public class UserServiceImplTest {
     @Test
     public void testGetUserList() throws Exception {
-        new UserService().getUserList();
+        new UserServiceImpl().getUserList();
     }
 }
